@@ -1,6 +1,7 @@
 import React from 'react';
 import { BookingWidget } from './BookingWidget.tsx';
 import { ShieldCheck, Sparkles, MapPin } from 'lucide-react';
+import heroImg from '../../assets/images/hero_us_car_rental_1794333645453.jpg';
 
 export const Hero: React.FC = () => {
   return (
@@ -8,7 +9,7 @@ export const Hero: React.FC = () => {
       {/* Background Photography with Scrim Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/hero_us_car_rental_1794333645453.jpg"
+          src={heroImg}
           alt="Luxury car driving on Pacific Coast Highway bridge at sunset"
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover object-center scale-105"

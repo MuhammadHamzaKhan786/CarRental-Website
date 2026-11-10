@@ -21,8 +21,18 @@ interface CarCardProps {
 export const CarCard: React.FC<CarCardProps> = ({ car }) => {
   const navigate = useNavigate();
   const { isFavorite, toggleFavorite } = useApp();
-  const [imageError, setImageError] = useState(false);
+  const [imgSrc, setImgSrc] = useState(car.imageUrl);
+  const [failed, setFailed] = useState(false);
   const favorited = isFavorite(car.id);
+
+  const handleImageError = () => {
+    const backup = car.galleryUrls.find((u) => u !== imgSrc && u.startsWith('http'));
+    if (backup && imgSrc !== backup) {
+      setImgSrc(backup);
+    } else {
+      setFailed(true);
+    }
+  };
 
   const handleBookNow = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -36,17 +46,18 @@ export const CarCard: React.FC<CarCardProps> = ({ car }) => {
     >
       {/* Top Banner & Image Container */}
       <div className="relative aspect-[16/10] bg-slate-100 dark:bg-slate-900 overflow-hidden">
-        {imageError ? (
-          <div className="w-full h-full flex flex-col items-center justify-center p-6 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 text-slate-400">
-            <span className="text-sm font-semibold">{car.make} {car.model}</span>
+        {failed ? (
+          <div className="w-full h-full flex flex-col items-center justify-center p-6 bg-gradient-to-br from-slate-800 to-[#0B1B3A] text-white">
+            <span className="text-xs uppercase tracking-wider text-[#FF6B2C] font-bold">{car.category}</span>
+            <span className="text-base font-bold mt-1 text-center">{car.name}</span>
           </div>
         ) : (
           <img
-            src={car.imageUrl}
+            src={imgSrc}
             alt={`${car.year} ${car.name}`}
             referrerPolicy="no-referrer"
             loading="lazy"
-            onError={() => setImageError(true)}
+            onError={handleImageError}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
         )}

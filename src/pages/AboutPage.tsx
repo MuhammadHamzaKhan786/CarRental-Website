@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { StatsCounter } from '../components/home/StatsCounter.tsx';
 import { ShieldCheck, Award, HeartHandshake, Car, ArrowRight } from 'lucide-react';
+import heroImg from '../assets/images/hero_us_car_rental_1794333645453.jpg';
 
 export const AboutPage: React.FC = () => {
   return (
@@ -23,7 +24,7 @@ export const AboutPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="/src/assets/images/hero_us_car_rental_1794333645453.jpg"
+              src={heroImg}
               alt="Veloce car cruising coastal highway"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"

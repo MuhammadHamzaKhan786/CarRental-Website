@@ -1,4 +1,8 @@
 import { Car } from '../types/index.ts';
+import mustangImg from '../assets/images/fleet_muscle_coupe_1794333645805.jpg';
+import teslaImg from '../assets/images/fleet_electric_sedan_1794333645968.jpg';
+import tahoeImg from '../assets/images/fleet_luxury_suv_1794333645937.jpg';
+import jeepImg from '../assets/images/fleet_rugged_jeep_1794333647332.jpg';
 
 export const CARS: Car[] = [
   {
@@ -18,9 +22,9 @@ export const CARS: Car[] = [
     ac: true,
     rating: 4.94,
     reviewCount: 312,
-    imageUrl: '/src/assets/images/fleet_muscle_coupe_1794333645805.jpg',
+    imageUrl: mustangImg,
     galleryUrls: [
-      '/src/assets/images/fleet_muscle_coupe_1794333645805.jpg',
+      mustangImg,
       'https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80',
     ],
@@ -59,9 +63,9 @@ export const CARS: Car[] = [
     ac: true,
     rating: 4.96,
     reviewCount: 428,
-    imageUrl: '/src/assets/images/fleet_electric_sedan_1794333645968.jpg',
+    imageUrl: teslaImg,
     galleryUrls: [
-      '/src/assets/images/fleet_electric_sedan_1794333645968.jpg',
+      teslaImg,
       'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1536700503339-1e4b06520771?auto=format&fit=crop&w=1200&q=80',
     ],
@@ -100,9 +104,9 @@ export const CARS: Car[] = [
     ac: true,
     rating: 4.91,
     reviewCount: 198,
-    imageUrl: '/src/assets/images/fleet_luxury_suv_1794333645937.jpg',
+    imageUrl: tahoeImg,
     galleryUrls: [
-      '/src/assets/images/fleet_luxury_suv_1794333645937.jpg',
+      tahoeImg,
       'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80',
     ],
@@ -141,9 +145,9 @@ export const CARS: Car[] = [
     ac: true,
     rating: 4.89,
     reviewCount: 265,
-    imageUrl: '/src/assets/images/fleet_rugged_jeep_1794333647332.jpg',
+    imageUrl: jeepImg,
     galleryUrls: [
-      '/src/assets/images/fleet_rugged_jeep_1794333647332.jpg',
+      jeepImg,
       'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=80',
     ],
