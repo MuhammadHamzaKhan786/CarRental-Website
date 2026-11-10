@@ -1,91 +1,120 @@
-# Veloce Car Rental 🚗💨
+# Veloce Car Rental 🚗
 
-A modern, responsive, and feature-rich car rental web application tailored for the United States market, built with **React 19**, **React Router v7**, and **Tailwind CSS v4**.
+Veloce is a car rental web application built around US travel conventions. Users can search a fleet, compare vehicles, see an itemized price before committing, and work through a full booking flow that ends in a printable reservation voucher.
 
-Designed with a premium, trustworthy look inspired by leading mobility platforms (Turo, Hertz, Enterprise, Sixt).
+The interface takes its cues from established rental platforms such as Turo, Hertz, Enterprise and Sixt, with the goal of feeling clear and trustworthy rather than flashy.
 
----
+🌐 **Live demo:** [carrental-website-eta.vercel.app](https://carrental-website-eta.vercel.app)
 
 ## ✨ Features
 
-- **US Fleet & Travel Conventions**:
-  - Itemized pricing in USD (`$`) with mandatory US state taxes (9.25%), vehicle licensing & road recovery ($4.50/day), and age-based young driver surcharges ($25/day for ages 21–24).
-  - Standard US date format (`MM/DD/YYYY`), 12-hour pick-up/return time pickers (`AM`/`PM`), distances in miles, and fuel economy in `MPG` (or `MPGe` / EV range).
-  - 18 premier US pick-up hubs: 8 major airport terminals (`JFK`, `LAX`, `ORD`, `MIA`, `ATL`, `DFW`, `SFO`, `LAS`) and 10 downtown business districts (`NYC`, `LA`, `Chicago`, `Miami`, `Atlanta`, `Dallas`, `SF`, `Las Vegas`, `Houston`, `Seattle`).
-- **Interactive Multi-Facet Search**:
-  - Live filtering by price range slider ($30–$200/day), brand, vehicle category (`SUV`, `Sedan`, `Luxury`, `Electric`, `Truck`, `Economy`), transmission, and pick-up location.
-  - Real-time sorting by Price (Low to High, High to Low) and Customer Rating.
-- **Car Details & Live Cost Calculator**:
-  - Image gallery with full-screen lightbox modal.
-  - Dynamic price breakdown calculating duration, young driver surcharges, insurance tiers (CDW, Liability, Personal Accident, or Own Insurance), and add-on extras (E-ZPass toll pass, GPS, child safety seat, additional driver, unlimited miles).
-- **4-Step Checkout & Printable Voucher**:
-  - Step 1: Driver details (50-state license selector, US phone formatting).
-  - Step 2: Protection and travel extras.
-  - Step 3: Secure card payment (auto-formatting, CVV/Expiry check, Apple Pay & Google Pay).
-  - Step 4: Reservation voucher with booking code (e.g. `VEL-23372`), vehicle specs, pick-up instructions, and print capability.
-- **Dedicated Pricing & Contact Pages**:
-  - Separate `/pricing` route with daily, weekly, and monthly rate cards.
-  - Dedicated `/contact` route with 24/7 roadside assistance callout, HQ dispatch details, and validated inquiry form.
-- **User Dashboard & Persistence**:
-  - "My Bookings" tab with cancellation capabilities.
-  - "Saved Favorites" wishlist persisted in `localStorage`.
-  - Dual-mode Dark / Light theme toggle with `localStorage` memory.
-- **Mobile First & Fully Responsive**:
-  - Optimized for mobile viewports (320px–414px) up to ultra-wide displays (1536px+).
-  - Slide-in mobile drawer navigation with smooth animations.
+### 🔍 Search and browsing
+- Filter by daily price range ($30–$200), brand, category (SUV, Sedan, Luxury, Electric, Truck, Economy), transmission and pick-up location.
+- Sort results by price (ascending or descending) or customer rating.
+- 18 pick-up locations: eight airport terminals (JFK, LAX, ORD, MIA, ATL, DFW, SFO, LAS) and ten downtown districts across major US cities.
 
----
+### 💵 Vehicle details and pricing
+- Image gallery with a full-screen lightbox.
+- A live cost calculator that updates as the rental changes. It accounts for:
+  - rental duration
+  - US state tax (9.25%)
+  - vehicle licensing and road recovery fee ($4.50/day)
+  - young driver surcharge ($25/day for drivers aged 21–24)
+  - insurance tiers: CDW, Liability, Personal Accident, or the renter's own coverage
+  - optional extras: E-ZPass, GPS, child safety seat, additional driver, unlimited miles
+- Standard US formats throughout: `MM/DD/YYYY` dates, 12-hour AM/PM times, miles, and MPG (or MPGe and range for electric vehicles).
+
+### 🧾 Checkout
+A four-step flow:
+1. **Driver details** – 50-state license selector and US phone number formatting.
+2. **Protection and extras** – insurance and add-ons.
+3. **Payment** – card input with automatic formatting, CVV and expiry validation, plus Apple Pay and Google Pay options.
+4. **Voucher** – a reservation summary with booking code (for example `VEL-23372`), vehicle specs and pick-up instructions, ready to print.
+
+### 👤 Account and preferences
+- "My Bookings" view with the ability to cancel a reservation.
+- Saved favorites ❤️, stored in `localStorage`.
+- Light and dark themes 🌗, with the choice remembered between visits.
+
+### 📄 Other pages
+- `/pricing` – daily, weekly and monthly rate cards.
+- `/contact` – roadside assistance information, dispatch details and a validated inquiry form.
+
+### 📱 Responsive design
+Layouts are tuned for phones (320px and up) through to ultra-wide displays (1536px+). On small screens, navigation moves into a slide-in drawer.
 
 ## 🛠 Tech Stack
 
-- **Framework**: [React 19](https://react.dev/)
-- **Routing**: [React Router v7](https://reactrouter.com/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Animations**: [Framer Motion](https://motion.dev/)
-- **Build Tool**: [Vite 8](https://vite.dev/)
-- **Language**: TypeScript
-
----
+| Area | Tool |
+| --- | --- |
+| UI framework | [React 19](https://react.dev/) |
+| Routing | [React Router v7](https://reactrouter.com/) |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com/) |
+| Icons | [Lucide React](https://lucide.dev/) |
+| Animation | [Framer Motion](https://motion.dev/) |
+| Build tool | [Vite 8](https://vite.dev/) |
+| Language | TypeScript |
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-
-- Node.js (version 20 or higher recommended)
-- npm or pnpm
+- Node.js 20 or later
+- npm (or pnpm / Bun)
 
 ### Installation
 
-1. Clone your repository:
-   ```bash
-   git clone <YOUR_GITHUB_REPO_URL>
-   cd <YOUR_REPO_DIR>
-   ```
+```bash
+git clone https://github.com/MuhammadHamzaKhan786/CarRental-Website.git
+cd CarRental-Website
+npm install
+```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+If the project reads any environment variables, copy the provided template first:
 
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
+```bash
+cp .env.example .env
+```
 
-4. Open your browser and navigate to:
-   ```text
-   http://localhost:3000
-   ```
+### Run locally
 
-### Building for Production
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:3000`.
+
+### Production build
 
 ```bash
 npm run build
 ```
 
----
+The optimized output is written to the `dist` directory.
 
-## 📄 License
+## 📁 Project Structure
 
-Apache-2.0
+```
+.
+├── public/          Static assets
+├── src/             Application source (components, pages, styles)
+├── index.html       Entry HTML file
+├── vite.config.ts   Vite configuration
+├── tsconfig.json    TypeScript configuration
+└── .env.example     Environment variable template
+```
+
+## 📝 Notes
+
+This is a front-end project. Booking, favorites and theme data live in the browser, and the payment step is a demonstration of the checkout experience, not a connection to a real payment processor. Do not enter real card details.
+
+## 🤝 Contributing
+
+Issues and pull requests are welcome. For larger changes, please open an issue first so the approach can be discussed before work begins.
+
+## 📜 License
+
+Released under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+## 👨‍💻 Author
+
+Muhammad Hamza Khan — [@MuhammadHamzaKhan786](https://github.com/MuhammadHamzaKhan786)
