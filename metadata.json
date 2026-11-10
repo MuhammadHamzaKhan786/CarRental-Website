@@ -1,0 +1,6 @@
+{
+  "name": "Veloce Car Rental",
+  "description": "Premium US car rental platform with seamless airport & city bookings, transparent pricing, and instant checkout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
