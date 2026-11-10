@@ -4,14 +4,21 @@ import { ShieldCheck, Sparkles, MapPin } from 'lucide-react';
 import heroImg from '../../assets/images/hero_us_car_rental_1794333645453.jpg';
 
 export const Hero: React.FC = () => {
+  const [bgSrc, setBgSrc] = React.useState(heroImg);
+
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden">
       {/* Background Photography with Scrim Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-[#0B1B3A]">
         <img
-          src={heroImg}
+          src={bgSrc}
           alt="Luxury car driving on Pacific Coast Highway bridge at sunset"
           referrerPolicy="no-referrer"
+          onError={() =>
+            setBgSrc(
+              'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80'
+            )
+          }
           className="w-full h-full object-cover object-center scale-105"
         />
         {/* Measured Scrim for WCAG AA readability */}

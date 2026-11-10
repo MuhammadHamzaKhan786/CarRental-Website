@@ -5,6 +5,8 @@ import { ShieldCheck, Award, HeartHandshake, Car, ArrowRight } from 'lucide-reac
 import heroImg from '../assets/images/hero_us_car_rental_1794333645453.jpg';
 
 export const AboutPage: React.FC = () => {
+  const [imgSrc, setImgSrc] = React.useState(heroImg);
+
   return (
     <div className="min-h-screen bg-[#F5F7FA] dark:bg-[#070E1E] py-12 transition-colors space-y-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,11 +24,16 @@ export const AboutPage: React.FC = () => {
 
         {/* Narrative Split */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-slate-200 dark:bg-slate-800">
             <img
-              src={heroImg}
+              src={imgSrc}
               alt="Veloce car cruising coastal highway"
               referrerPolicy="no-referrer"
+              onError={() =>
+                setImgSrc(
+                  'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80'
+                )
+              }
               className="w-full h-full object-cover"
             />
           </div>
